@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Anastasia Reinhardt's Homepage</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/full-width-pics.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Home</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="project.html">Project</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+	<!-- Content Section -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+				<h2>Week 4 (June 12 - June 16)</h2>
+					<p>This week was pretty frustrating. I spent all of it trying to get pagination to work, to no avail. I switched libraries several times and tried every possible combination of the jQuery UI Dialog/<a href="http://v4-alpha.getbootstrap.com/components/popovers/">Bootstrap popover</a> with <a href="http://www.jqueryrain.com/?piHSAiMw">"Sweet Pages"</a>/Bootstrap pagination.</p>
+					<p>There were multiple problems with each solution I attempted. I liked the look of Sweet Pages, and it was one of the few pagination solutions I could find online that you didn't have to hack to make it paginate within a div. However, trying to integrate it with a dialog/popover completely trashed it because the different panels wouldn't line up right and the special CSS it needed messed up everything
+					(and I don't have the CSS skills to fix it). After going back and forth with different libraries, I ended up deciding to do an all-Bootstrap solution, which still doesn't work completely but I'm sticking with it.</p>
+					<p>The current iteration of my solution uses a pagination script based on <a href="https://jsfiddle.net/x2tqujzz/2/">this example.</a> Right now Tianyi is working on helping me debug it; the problem is that the script doesn't recognize when the buttons are clicked, so a pagination-button click just defaults to sending the user to the top of the page.</p>
+					<p><b>Update:</b> We've just discovered that the script is not being injected correctly into the page, so it only runs once and then it doesn't run again, which is why it doesn't register mouse-clicks. So now I need to rework how I'm injecting the script into the StackOverflow page.</p>
+					<p>Tianyi has been really helpful with this issue in more ways than one. I was feeling frustrated with my solutions not working, but he reminded me in an email that finding that something isn't working <i>is</i> progress -- and part of research. So I've been learning through this episode to take issues like this in stride and not to get too stressed about feeling "held back" when it takes awhile to find a working solution for a problem. I've also been learning a lot about Chrome extension development!</p>
+					<p>I'm taking this coming week off to go to Texas for my friend's wedding, but when I get back I'll work on fixing this pagination problem and move on. Our next step is to have the extension read test data and create popups based on that, I think. I'll be discussing it in more detail with Tianyi when I get back, so more on that next week! For now, here is the current look of the extension using the Bootstrap popover instead of the jQuery UI Dialog (and Bootstrap pagination without nice CSS -- I'll fix that):</p><p><img src="images/maple_ui_prototype5.PNG" alt="maple ui prototype 5" id="maple ui prototype 5" height="600px"></p>				
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

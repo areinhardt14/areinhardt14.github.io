@@ -45,7 +45,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Project</a>
+                        <a href="project.html">Project</a>
                     </li>
                 </ul>
             </div>
@@ -53,32 +53,23 @@
         </div>
         <!-- /.container -->
     </nav>
-	
-	 <!-- Content Section -->
+
+	<!-- Content Section -->
     <section>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="section-heading">Project Journal</h1>
-					<h2>Week 1 (May 22 - May 26)</h2>
-                    <p>Dr. Kim and Tianyi were at ICSE 2017 this week, so I was able to get to know Westwood and UCLA. I met Dr. Kim's other grad students, Gulzar and Shaghayegh, who got me settled into the CS lab.</p>
-					<p>... <a href="week1.html">Read more</a></p>
-					<h2>Week 2 (May 29 - June 2)</h2>
+				<h2>Week 2 (May 29 - June 2)</h2>
                     <p>I met Dr. Kim and Tianyi this week, and we discussed the long-term goals of my project this summer. Ideally, I could develop the UI and then we could do some human tests and write that into a paper.</p>
-					<p>... <a href="week2.html">Read more</a></p>
-					<h2>Week 3 (June 5 - June 9)</h2>
-					<p>This week I made some real progress in my UI mockup; I'm almost done with hardcoding the prototype and then we can see about hooking it up to Maple on a server! However, right now I'm stuck on the trickiest part (in my opinion so far), which is to make the dialog popup show multiple solutions by letting a user see different "pages" of the dialog.</p>
-					<p>... <a href="week3.html">Read more</a></p>
-					<h2>Week 4 (June 12 - June 16)</h2>
-					<p>This week was pretty frustrating. I spent all of it trying to get pagination to work, to no avail. I switched libraries several times and tried every possible combination of the jQuery UI Dialog/<a href="http://v4-alpha.getbootstrap.com/components/popovers/">Bootstrap popover</a> with <a href="http://www.jqueryrain.com/?piHSAiMw">"Sweet Pages"</a>/Bootstrap pagination.</p>
-					<p>... <a href="week4.html">Read more</a></p>
-					<h2>Week 5 (June 26 - June 30)</h2>
-					<p>I felt so productive this week because I got to leave the JavaScript/CSS libraries behind and do some honest-to-goodness coding. 
-					While libraries can be helpful in the long run, so much time seems to be spent learning how to use and configure them, while I feel more comfortable with the 
-					process of just coding, testing, and debugging.</p>
-					<p>... <a href="week5.html">Read more</a></p>
-		   </div>
-        </div>
-    </section>
+					<p>This week I had to create a mockup of the UI for Dr. Kim and Tianyi to give feedback on. I made sketches of how it would augment StackOverflow, the use cases, and what a popup might look like.
+					At first, I had been considering an augmentation of the site that would appear under the code box in violation, like so: <br><img src="images/maple_ui_prototype3.jpg" alt="maple ui prototype 3" id="maple ui prototype 3" height="300"></p>
+					<p>However, after talking it over with Tianyi, he pointed out that a UI like Codota's <a href="https://www.codota.com/code-browsing-assistant">code browsing assistant</a> would be cleaner and more sophisticated. I agree, so right now I'm
+					using Codota as my primary source of inspiration, as well as a few HCI papers Tianyi sent my way. My current tooltip/popup look would be something like this:<br><img src="images/tooltip1.jpg" alt="tooltip1" id="tooltip1" height="500"></p>
+					<p>The violating code lines would be highlighted when the user loads the page, and hovering over the highlighted text with the mouse would cause the tooltip to appear. Clicking on the highlighted text would make the tooltip stay visible until a mouse click is registered outside of the highlighted text.
+					I also thought a copy-button like Codota's could be a nice feature for users who would want to copy Maple's solution from the tooltip.</p>			
+				</div>
+			</div>
+		</div>
+	</section>
 </body>
 </html>
