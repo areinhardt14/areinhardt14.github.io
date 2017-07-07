@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Anastasia Reinhardt's Homepage</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/full-width-pics.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Home</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="project.html">Project</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+	<!-- Content Section -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+				<h2>Week 6 (July 3 - July 7)</h2>
+				<p>I finished as much as I could of the voting buttons this week, so now a user can click an upvote/downvote button on a solution in the popup and the button will send its ID to the server, and then disable itself so 
+				a user can only send one upvote/downvote per solution. In the database, I added a new column for each pattern that will tally its votes, and I made a Java method to add new votes to the database. However, to actually connect 
+				these two pieces, I need the database ID for each pattern in order to locate it in the database, and the voting buttons don't know these IDs. So, I have to wait until we actually implement the part where we get patterns from the 
+				database and send them to the plugin in order to have all the data I need.</p>
+				<p>And, that's what I'm working on now! My primary task this week has been to actually integrate the Maple project with this one, and it's a pretty huge undertaking. I added classes from the Maple project to our server, and used them 
+				to parse and analyze the code snippets I'm sending the server from Stack Overflow into lists of "APISeqItems." After that, it's simple to grab any API calls from these lists and send them to the database to see if there are any patterns 
+				that correspond to these calls. If so, these patterns are sent back to the server.</p>
+				<p>Currently I'm working on parsing these patterns from the database (which are sort of stringified API call sequences) into and ArrayList of APISeqItems. 
+				If they were just code, I could parse them like I did with the SO snippets, but since they already are API call sequences, I don't have a ready-made way to parse them, so I'm exploring different ways to do so myself. After I figure 
+				that out, then I can integrate the Maple code that detects API misuses and use that to determine which patterns (corresponding to which SO snippets) I need to send back to the plugin.</p>
+				<p>Tianyi has been really helpful with making sure I understand how Maple works so I can learn something from it, instead of just copying and pasting it into our server project. It's really cool to see concepts I learned just last semester 
+				(in Programming Languages and Analysis of Algorithms) applied in this code that I'm working with.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
