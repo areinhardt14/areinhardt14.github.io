@@ -67,7 +67,7 @@
 				<p>And, that's what I'm working on now! My primary task this week has been to actually integrate the Maple project with this one, and it's a pretty huge undertaking. I added classes from the Maple project to our server, and used them 
 				to parse and analyze the code snippets I'm sending the server from Stack Overflow into lists of "APISeqItems." After that, it's simple to grab any API calls from these lists and send them to the database to see if there are any patterns 
 				that correspond to these calls. If so, these patterns are sent back to the server.</p>
-				<p>Currently I'm working on parsing these patterns from the database (which are sort of stringified API call sequences) into and ArrayList of APISeqItems. 
+				<p>Currently I'm working on parsing these patterns from the database (which are sort of stringified API call sequences) into an ArrayList of APISeqItems. 
 				If they were just code, I could parse them like I did with the SO snippets, but since they already are API call sequences, I don't have a ready-made way to parse them, so I'm exploring different ways to do so myself. After I figure 
 				that out, then I can integrate the Maple code that detects API misuses and use that to determine which patterns (corresponding to which SO snippets) I need to send back to the plugin.</p>
 				<p>Tianyi has been really helpful with making sure I understand how Maple works so I can learn something from it, instead of just copying and pasting it into our server project. It's really cool to see concepts I learned just last semester 

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Anastasia Reinhardt's Homepage</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/full-width-pics.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Home</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="project.html">Project</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+	<!-- Content Section -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+				<h2>Week 7 (July 10 - July 14)</h2>
+				<p>We made a lot of progress this week, but we encountered some obstacles which means we didn't get as far as we had planned a week ago. First of all, 
+				we had another video meeting with Dr. Hartmann and Elena, and among the things we discussed was the idea to synthesize code examples for the popup 
+				by stitching together different GitHub examples following the same abstract pattern. So that is what Tianyi decided to tackle this week, while I continued 
+				work on the UI itself.</p>
+				<p>The final integration of Maple with the server was more difficult than I had anticipated, so last weekend Tianyi finished implementing it, so the server 
+				now finds API misuses in the Stack Overflow code and gives us a list of violations that we can send back to the Chrome extension. This week, I created the 
+				JSON message the server sends back to the extension, which took awhile because I had to keep going back and changing the structure of the message so that 
+				we can send only the data we absolutely need (and since I hadn't implemented the plugin-side, I wasn't exactly sure what we needed). As a part of this process, 
+				I created natural-language "violation messages" based on data from Maple. Basically, for each type of violation we wanted to return a tailored message that 
+				would be as helpful and understandable as possible to go with the code example the user would see. So, based on the violation type (Incorrect Precondition, 
+				Missing Method Call, Missing Control Structure, Disordered Method Call, and Disordered Control Structure) and whether a different API call or control structure 
+				was needed, a different message would be returned. For example, if a try-catch block needed to be added to an API call, the message might be: "You may want to use a 
+				try-catch block here. 1234 Github code examples also do this," plus a brief description of the API call pattern that necessitated this change.</p>
+				<p>After implementing this, I also had to get rid of redundant violations we were getting -- if a code snippet was missing a try-catch block, for instance, 
+				we would get four different violations: try, end-block (i.e. the end of the try-block), catch, and another end-block. I decided to save the violation that 
+				was most meaningful for determining what the actual problem was that was causing the violation. So, for instance, if there was an if and an end-block, I would 
+				save the "if," but if there was an if/end-block and an else/end-block following it, I would save the "else" so I would know that Maple was suggesting an entire 
+				if-else block, not just a solo if-statement.</p>
+				<p>I used <a href="https://github.com/FasterXML/jackson">Jackson</a> (which I had used for parsing the JSON messages a couple of weeks ago) to create the 
+				JSON message with all this information to send to the server. It's a pretty nice library but sometimes a little frustrating to use because there are several, very different ways of using 
+				it to construct a JSON message.</p>
+				<p>After building the message, I moved back to the plugin side (and JavaScript) to grab the message and parse it. So far I am able to highlight the methods 
+				on the SO page that are potential API misuses, and am working on dynamically generating popups for each one. It's been a slow process because I keep learning 
+				weird JavaScript things that mess up my code for hours until I track down the problem. <a href="https://www.toptal.com/javascript/10-most-common-javascript-mistakes">
+				This article</a> on the "10 most common JavaScript mistakes" has been helpful this week -- apparently JS doesn't have block-level scope, which was definitely 
+				an assumption I had been making. Oops. Also, its suggestion to enable JS's "strict mode" was really useful; it enables stricter parsing and error handling which makes 
+				debugging a lot easier.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
