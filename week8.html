@@ -81,7 +81,7 @@
 				&lt;span class="pln"&gt;close&lt;/span&gt;</br>
 				&lt;span class="pun"&gt;();&lt;/span&gt;</br>
 				I don't do this in my popover HTML, so a way to distinguish between "close" in the SO snippet and "close" in my popover content would be to search for a "close" 
-				that occurs within a &lt;span&gt; tag. Once I figured out the syntax for this, it was a relatively-trivial solution.</p>
+				that occurs within a &lt;span&gt; tag. Once I figured out the syntax for this, it was a relatively trivial solution.</p>
 				<p>Of course, there are always more bugs. Once this was fixed, we noticed that the extension was generating popovers on partially-matched API calls. For the 
 				post that I've been primarily working with for testing, the server would identify a violating API call, "get," and highlight a call named "getChannel." Obviously, 
 				I needed to make my search stricter. I changed my check for API calls contained within &lt;span&gt; tags of a certain class from just checking whether the term 
